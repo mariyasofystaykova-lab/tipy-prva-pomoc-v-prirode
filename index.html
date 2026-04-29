@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipy pre Prvú Pomoc v Prírode – Bonus 3 PDF</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap');
+
+  :root {
+    --green-dark:  #1a3a1a;
+    --green-mid:   #2d6a2d;
+    --green-light: #4caf50;
+    --green-pale:  #e8f5e9;
+    --red-dark:    #8b0000;
+    --red-mid:     #c62828;
+    --red-light:   #ef5350;
+    --red-pale:    #ffebee;
+    --yellow-pale: #fffde7;
+    --yellow-mid:  #f9a825;
+    --cream:       #fafaf5;
+    --text:        #1c1c1c;
+    --muted:       #555;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── COVER ─────────────────────────────────── */
+  .cover {
+    background: linear-gradient(160deg, var(--green-dark) 0%, #0d2b0d 55%, var(--red-dark) 100%);
+    color: #fff;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='200' cy='200' r='180' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='40'/%3E%3C/svg%3E") center/cover;
+  }
+  .bonus-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--yellow-mid); color: #000;
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: 0.95rem; padding: 6px 18px; border-radius: 30px;
+    margin-bottom: 28px; box-shadow: 0 2px 12px rgba(0,0,0,.4);
+  }
+  .cover h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900; text-transform: uppercase;
+    line-height: 1.15; letter-spacing: .5px;
+    text-shadow: 2px 3px 10px rgba(0,0,0,.5);
+    margin-bottom: 10px;
+  }
+  .cover h1 span { color: var(--yellow-mid); }
+  .cover-svg-wrap {
+    margin: 32px auto 28px;
+    max-width: 520px;
+  }
+  .cover-svg-wrap svg { width: 100%; height: auto; }
+  .cover-bullets {
+    list-style: none; text-align: left;
+    display: inline-block; margin: 0 auto 36px;
+    font-size: 1.05rem;
+  }
+  .cover-bullets li { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
+  .cover-bullets li::before { content: '✔'; color: var(--green-light); font-weight: 900; flex-shrink: 0; }
+
+  .pdf-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--red-mid), var(--red-dark));
+    color: #fff; text-decoration: none;
+    font-family: 'Montserrat', sans-serif; font-weight: 800;
+    font-size: 1.15rem; padding: 18px 42px;
+    border-radius: 50px; letter-spacing: .4px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    transition: transform .2s, box-shadow .2s;
+    border: none; cursor: pointer;
+  }
+  .pdf-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,.5); }
+  .pdf-btn-wrap { margin-top: 12px; }
+
+  /* ── LAYOUT ─────────────────────────────────── */
+  .book { max-width: 860px; margin: 0 auto; }
+
+  /* ── SECTION BANNER ─────────────────────────── */
+  .sec-banner {
+    display: flex; align-items: center; gap: 16px;
+    padding: 22px 32px; color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem; font-weight: 800;
+  }
+  .sec-banner.green  { background: linear-gradient(90deg, var(--green-dark), var(--green-mid)); }
+  .sec-banner.red    { background: linear-gradient(90deg, var(--red-dark), var(--red-mid)); }
+  .sec-banner.yellow { background: linear-gradient(90deg, #5d4037, var(--yellow-mid)); }
+  .sec-banner .ico { font-size: 2rem; flex-shrink: 0; }
+
+  /* ── CONTENT BLOCK ─────────────────────────── */
+  .content {
+    background: #fff; padding: 32px 36px;
+    border-left: 5px solid var(--green-mid);
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    margin-bottom: 40px;
+  }
+  .content.red-border  { border-left-color: var(--red-mid); }
+  .content.yellow-border { border-left-color: var(--yellow-mid); }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--green-dark); margin: 28px 0 12px;
+  }
+  h2.red   { color: var(--red-dark); }
+  h2.brown { color: #5d4037; }
+  p { margin-bottom: 14px; }
+
+  /* ── INFO BOXES ─────────────────────────────── */
+  .info-box {
+    border-radius: 8px; padding: 16px 20px;
+    margin: 18px 0; display: flex; gap: 14px; align-items: flex-start;
+  }
+  .info-box .ib-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+  .info-box .ib-body { flex: 1; }
+  .info-box .ib-title { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .95rem; margin-bottom: 4px; }
+  .info-box.do    { background: var(--green-pale); border-left: 4px solid var(--green-light); }
+  .info-box.do    .ib-title { color: var(--green-dark); }
+  .info-box.dont  { background: var(--red-pale);   border-left: 4px solid var(--red-light); }
+  .info-box.dont  .ib-title { color: var(--red-dark); }
+  .info-box.warn  { background: var(--yellow-pale); border-left: 4px solid var(--yellow-mid); }
+  .info-box.warn  .ib-title { color: #5d4037; }
+  .info-box.info  { background: #e3f2fd;            border-left: 4px solid #1976d2; }
+  .info-box.info  .ib-title { color: #0d47a1; }
+
+  /* ── NUMBERED STEPS ─────────────────────────── */
+  .steps { list-style: none; counter-reset: step; margin: 18px 0; }
+  .steps li {
+    counter-increment: step;
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 14px; padding-bottom: 14px;
+    border-bottom: 1px dashed #ddd;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    background: var(--green-mid); color: #fff;
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .9rem; flex-shrink: 0;
+  }
+  .steps.red li::before  { background: var(--red-mid); }
+  .steps.brown li::before { background: #5d4037; }
+
+  /* ── CHECKLIST ─────────────────────────────── */
+  .cklist { list-style: none; margin: 14px 0; }
+  .cklist li {
+    padding: 9px 14px 9px 42px; position: relative;
+    margin-bottom: 6px; border-radius: 5px;
+    background: var(--green-pale);
+  }
+  .cklist li::before {
+    content: '☐'; position: absolute; left: 12px; top: 9px;
+    font-size: 1.1rem; color: var(--green-mid);
+  }
+  .cklist.red li { background: var(--red-pale); }
+  .cklist.red li::before { color: var(--red-mid); }
+
+  /* ── TABLE ─────────────────────────────────── */
+  .dtable { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: .95rem; }
+  .dtable th {
+    background: var(--green-dark); color: #fff;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    padding: 12px 14px; text-align: left;
+  }
+  .dtable.red th { background: var(--red-dark); }
+  .dtable td { padding: 10px 14px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+  .dtable tr:nth-child(even) td { background: #f5f5f5; }
+  .dtable tr:last-child td { border-bottom: none; }
+
+  /* ── STATS STRIP ─────────────────────────────── */
+  .stats-strip {
+    display: flex; flex-wrap: wrap; gap: 0;
+    background: var(--green-dark); color: #fff;
+    margin: 40px 0 0;
+  }
+  .stat-item {
+    flex: 1; min-width: 160px; padding: 22px 20px;
+    text-align: center; border-right: 1px solid rgba(255,255,255,.15);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem; font-weight: 900;
+    color: var(--yellow-mid); display: block;
+  }
+  .stat-label { font-size: .82rem; opacity: .85; }
+
+  /* ── DANGER GRID ─────────────────────────────── */
+  .danger-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin: 18px 0; }
+  .danger-card {
+    border-radius: 10px; overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  }
+  .danger-card .dc-head {
+    padding: 12px 16px; font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 1rem; color: #fff;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .danger-card .dc-body { padding: 14px 16px; background: #fff; font-size: .9rem; }
+  .danger-card .dc-body strong { display: block; margin-bottom: 4px; color: var(--red-dark); }
+  .danger-card.tick .dc-head  { background: #6d4c41; }
+  .danger-card.wasp .dc-head  { background: #f57f17; }
+  .danger-card.snake .dc-head { background: var(--red-dark); }
+  .danger-card.bear .dc-head  { background: #4e342e; }
+  .danger-card.cold .dc-head  { background: #1565c0; }
+  .danger-card.heat .dc-head  { background: #e65100; }
+
+  /* ── CPR VISUAL ─────────────────────────────── */
+  .cpr-steps {
+    display: flex; flex-wrap: wrap; gap: 0;
+    border: 2px solid var(--red-mid); border-radius: 10px; overflow: hidden;
+    margin: 20px 0;
+  }
+  .cpr-step {
+    flex: 1; min-width: 140px;
+    padding: 20px 16px; text-align: center;
+    border-right: 2px solid var(--red-mid);
+  }
+  .cpr-step:last-child { border-right: none; }
+  .cpr-step:nth-child(odd)  { background: var(--red-pale); }
+  .cpr-step:nth-child(even) { background: #fff; }
+  .cpr-step .cs-ico { font-size: 2.2rem; display: block; margin-bottom: 8px; }
+  .cpr-step .cs-num {
+    font-family: 'Montserrat', sans-serif; font-weight: 900;
+    font-size: 1.6rem; color: var(--red-mid); display: block;
+  }
+  .cpr-step .cs-label {
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    font-size: .85rem; color: var(--red-dark); display: block; margin-top: 4px;
+  }
+  .cpr-step p { font-size: .82rem; margin-top: 6px; color: var(--muted); }
+
+  /* ── RECOVERY POSITION ─────────────────────── */
+  .recovery-box {
+    background: #fff3e0; border: 2px solid #ef6c00;
+    border-radius: 10px; padding: 22px 24px; margin: 20px 0;
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+  .recovery-box .rb-icon { font-size: 3rem; flex-shrink: 0; }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  .footer {
+    background: var(--green-dark); color: rgba(255,255,255,.7);
+    text-align: center; padding: 30px 20px; font-size: .88rem;
+    margin-top: 60px;
+  }
+  .footer strong { color: #fff; }
+
+  /* ── SECTION SEPARATOR ─────────────────────── */
+  .section-wrap { margin-bottom: 0; }
+
+  /* ── TOC ─────────────────────────────────────── */
+  .toc {
+    background: #fff; padding: 30px 36px;
+    border-left: 5px solid var(--yellow-mid);
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  }
+  .toc h2 { color: #5d4037; margin-top: 0; }
+  .toc ol { padding-left: 20px; }
+  .toc ol li { margin-bottom: 8px; font-size: 1rem; }
+  .toc ol li a { color: var(--green-dark); text-decoration: none; font-weight: 600; }
+  .toc ol li a:hover { text-decoration: underline; }
+  .toc ol li span { color: var(--muted); font-size: .88rem; }
+
+  /* ── CONCLUSION ─────────────────────────────── */
+  .conclusion {
+    background: linear-gradient(135deg, var(--green-dark), #0d2b0d);
+    color: #fff; padding: 44px 40px; margin-bottom: 0;
+    text-align: center;
+  }
+  .conclusion h2 { color: var(--yellow-mid); font-size: 1.6rem; margin-bottom: 18px; }
+  .conclusion p { opacity: .9; max-width: 620px; margin: 0 auto 16px; font-size: 1.05rem; }
+
+  /* ── PRINT ─────────────────────────────────── */
+  @media print {
+    .pdf-btn, .pdf-btn-wrap { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ COVER ═══ -->
+<div class="cover">
+  <div class="bonus-badge">🎁 BONUS 3 &nbsp;📄 PDF</div>
+  <h1>TIPY PRE <span>PRVÚ&nbsp;POMOC</span><br>V PRÍRODE</h1>
+
+  <div class="cover-svg-wrap">
+    <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg">
+      <!-- Mountains background -->
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a2a0a"/>
+          <stop offset="100%" stop-color="#1a4a1a"/>
+        </linearGradient>
+        <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2d5a2d"/>
+          <stop offset="100%" stop-color="#1a3a1a"/>
+        </linearGradient>
+      </defs>
+      <rect width="520" height="280" fill="url(#sky)" rx="12"/>
+      <!-- Mountains -->
+      <polygon points="0,200 100,80 200,160 280,60 380,140 520,90 520,280 0,280" fill="url(#mtn1)" opacity=".9"/>
+      <polygon points="0,220 80,140 160,180 240,120 320,170 420,130 520,150 520,280 0,280" fill="#1a3a1a"/>
+      <!-- Trees -->
+      <g fill="#0d2b0d">
+        <polygon points="40,240 55,200 70,240"/>
+        <polygon points="460,240 475,200 490,240"/>
+        <polygon points="480,250 492,218 504,250"/>
+      </g>
+      <!-- Helicopter -->
+      <g transform="translate(360,55)">
+        <ellipse cx="0" cy="0" rx="38" ry="12" fill="#c62828" opacity=".95"/>
+        <rect x="-8" y="-12" width="16" height="12" fill="#b71c1c" rx="2"/>
+        <line x1="-38" y1="0" x2="-70" y2="-2" stroke="#aaa" stroke-width="2"/>
+        <ellipse cx="-54" cy="-2" rx="16" ry="3" fill="none" stroke="#ccc" stroke-width="1.5"/>
+        <rect x="30" y="-3" width="18" height="6" fill="#c62828" rx="2"/>
+        <rect x="33" y="-7" width="2" height="14" fill="#aaa"/>
+        <text x="-10" y="5" font-size="12" fill="white" font-weight="bold" text-anchor="middle">+</text>
+      </g>
+      <!-- First-aid bag -->
+      <g transform="translate(160,140)">
+        <rect x="-45" y="-30" width="90" height="70" rx="8" fill="#c62828"/>
+        <rect x="-35" y="-40" width="30" height="14" rx="4" fill="#b71c1c"/>
+        <rect x="-15" y="-28" width="30" height="8" rx="2" fill="white"/>
+        <rect x="-8" y="-35" width="16" height="22" rx="2" fill="white"/>
+      </g>
+      <!-- Compass -->
+      <g transform="translate(330,165)">
+        <circle cx="0" cy="0" r="28" fill="#2d4a1a" stroke="#ccc" stroke-width="2"/>
+        <circle cx="0" cy="0" r="22" fill="#1a3a1a"/>
+        <polygon points="0,-18 4,0 0,4 -4,0" fill="#e53935"/>
+        <polygon points="0,18 4,0 0,-4 -4,0" fill="#ccc"/>
+        <text x="0" y="-6" font-size="8" fill="#ccc" text-anchor="middle">N</text>
+        <circle cx="0" cy="0" r="3" fill="#fff"/>
+      </g>
+      <!-- Knife -->
+      <g transform="translate(255,195) rotate(-30)">
+        <rect x="-4" y="-40" width="8" height="35" rx="2" fill="#ccc"/>
+        <rect x="-4" y="-5" width="8" height="18" rx="2" fill="#5d4037"/>
+      </g>
+      <!-- Bandage roll -->
+      <g transform="translate(200,190)">
+        <ellipse cx="0" cy="0" rx="20" ry="12" fill="#fff" opacity=".9"/>
+        <ellipse cx="0" cy="0" rx="12" ry="7" fill="#ffcdd2" opacity=".8"/>
+        <ellipse cx="0" cy="0" rx="5" ry="3" fill="#fff"/>
+      </g>
+      <!-- Person silhouette (hiker) -->
+      <g transform="translate(80,160)" fill="#2d6a2d">
+        <circle cx="0" cy="-55" r="9"/>
+        <rect x="-7" y="-46" width="14" height="28" rx="4"/>
+        <line x1="-7" y1="-20" x2="-12" y2="0" stroke="#2d6a2d" stroke-width="4" stroke-linecap="round"/>
+        <line x1="7" y1="-20" x2="12" y2="0" stroke="#2d6a2d" stroke-width="4" stroke-linecap="round"/>
+        <line x1="-4" y1="-18" x2="-8" y2="10" stroke="#2d6a2d" stroke-width="4" stroke-linecap="round"/>
+        <line x1="4" y1="-18" x2="8" y2="10" stroke="#2d6a2d" stroke-width="4" stroke-linecap="round"/>
+        <!-- Backpack -->
+        <rect x="5" y="-42" width="14" height="22" rx="4" fill="#1a3a1a"/>
+      </g>
+      <!-- Campfire -->
+      <g transform="translate(420,220)">
+        <ellipse cx="0" cy="12" rx="18" ry="5" fill="#3a2a0a" opacity=".6"/>
+        <line x1="-12" y1="12" x2="0" y2="0" stroke="#5d4037" stroke-width="3"/>
+        <line x1="12" y1="12" x2="0" y2="0" stroke="#5d4037" stroke-width="3"/>
+        <line x1="-6" y1="12" x2="0" y2="2" stroke="#5d4037" stroke-width="2"/>
+        <ellipse cx="0" cy="4" rx="8" ry="10" fill="#e65100" opacity=".9"/>
+        <ellipse cx="0" cy="6" rx="5" ry="7" fill="#ff8f00" opacity=".9"/>
+        <ellipse cx="0" cy="8" rx="3" ry="4" fill="#ffee58"/>
+      </g>
+    </svg>
+  </div>
+
+  <ul class="cover-bullets">
+    <li>rýchlo reagovať v núdzových situáciách</li>
+    <li>správne ošetriť zranenia v prírode</li>
+    <li>zachovať pokoj a robiť správne rozhodnutia</li>
+    <li>pomôcť sebe aj ľuďom okolo vás</li>
+  </ul>
+
+  <div class="pdf-btn-wrap">
+    <a class="pdf-btn" href="https://github.com/mariyasofystaykova-lab/tipy-prva-pomoc-v-prirode/raw/main/Tipy_Prva_Pomoc_v_Prirode.pdf">
+      ⬇ Stiahnuť PDF zadarmo
+    </a>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ BOOK ═══ -->
+<div class="book">
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Kapitol s&nbsp;radami</span></div>
+    <div class="stat-item"><span class="stat-num">40+</span><span class="stat-label">Konkrétnych tipov</span></div>
+    <div class="stat-item"><span class="stat-num">18&nbsp;300</span><span class="stat-label">Horská záchranná služba</span></div>
+    <div class="stat-item"><span class="stat-num">112</span><span class="stat-label">Tiesňová linka EÚ</span></div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc" style="margin-top:40px">
+    <h2>📋 Obsah</h2>
+    <ol>
+      <li><a href="#uvod">Úvod</a> <span>— Prečo je prvá pomoc v prírode iná</span></li>
+      <li><a href="#vybava">Kapitola 1: Základná výbava</a> <span>— Čo musí mať každý turistický lekárničke</span></li>
+      <li><a href="#zranenia">Kapitola 2: Zranenia a rezné rany</a> <span>— Krvácanie, rezné a odreniny</span></li>
+      <li><a href="#zlomeniny">Kapitola 3: Zlomeniny a vykĺbenia</a> <span>— Imobilizácia v teréne</span></li>
+      <li><a href="#nebezpecia">Kapitola 4: Nebezpečenstvá prírody</a> <span>— Kliešte, osy, zmije, medvede, hypotermia</span></li>
+      <li><a href="#nudzove">Kapitola 5: Núdzové situácie</a> <span>— Stratenie, SOS, orientácia, HZS</span></li>
+      <li><a href="#kpr">Kapitola 6: Resuscitácia a bezvedomie</a> <span>— KPR krok za krokom</span></li>
+      <li><a href="#zaver">Záver</a> <span>— Byť pripravený zachraňuje životy</span></li>
+    </ol>
+  </div>
+
+  <!-- ══ ÚVOD ══════════════════════════════════ -->
+  <div id="uvod" class="section-wrap">
+    <div class="sec-banner green"><span class="ico">🌿</span> Úvod — Prečo je prvá pomoc v prírode iná</div>
+    <div class="content">
+      <p>Každý rok zachytí hory, lesy a rieky na Slovensku státisíce nadšených turistov, rodiny s deťmi aj skúsených horolezov. Väčšina výletov sa skončí krásnym zážitkom — ale nie všetky. Zlomená noha na hrebeni Nízkych Tatier, štipnutie zmijou pri zbere húb alebo náhle bezvedomie ďaleko od cesty sú situácie, kde každá minúta rozhoduje.</p>
+      <p>Prvá pomoc v meste a prvá pomoc v prírode sú dve odlišné disciplíny. V meste zavoláte 112 a záchranári dorazí do niekoľkých minút. V prírode môžete čakať hodiny — alebo musíte sami niesť zraneného, improvizovať dlahy z vetiev a rozhodnúť, či je bezpečné pohnúť sa z miesta.</p>
+
+      <div class="info-box do">
+        <div class="ib-icon">✅</div>
+        <div class="ib-body">
+          <div class="ib-title">Tri základné princípy prvej pomoci v prírode</div>
+          <ol style="padding-left:16px; margin-top:4px">
+            <li><strong>Zaistite bezpečnosť</strong> — seba i zraneného. Nič nezhoršuje situáciu viac ako druhý zranený.</li>
+            <li><strong>Volajte o pomoc čo najskôr</strong> — HZS 18 300, záchranná služba 112.</li>
+            <li><strong>Udržujte zraneného pri teplom a pokoji</strong> — šok a hypotermia sú v prírode rovnako nebezpečné ako samotné zranenie.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="info-box warn">
+        <div class="ib-icon">⚠️</div>
+        <div class="ib-body">
+          <div class="ib-title">Upozornenie</div>
+          Táto príručka slúži ako praktický sprievodca, <strong>nie náhrada odbornej prvej pomoci</strong>. Odporúčame absolvovať kurz prvej pomoci Slovenského Červeného kríža (cervenykriz.sk) alebo Horskej záchrannej služby.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KAPITOLA 1 ══════════════════════════════ -->
+  <div id="vybava" class="section-wrap">
+    <div class="sec-banner green"><span class="ico">🎒</span> Kapitola 1 — Základná výbava turistickej lekárničky</div>
+    <div class="content">
+      <p>Dobre vybavená lekárnička je základ každého výletu. Ľahký kompromis medzi hmotnosťou a obsahom je kľúčový — čo je zbytočné, nechajte doma; čo je nevyhnutné, vždy zoberte.</p>
+
+      <table class="dtable">
+        <thead>
+          <tr>
+            <th>Predmet</th>
+            <th>Použitie</th>
+            <th>Prečo je dôležitý</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>🩹 Náplasťe (rôzne veľkosti)</td><td>Rezné rany, odreniny</td><td>Zabraňuje infekcii, základné krytie</td></tr>
+          <tr><td>🧻 Sterilné gázy (5×5, 10×10 cm)</td><td>Väčšie rany, krvácanie</td><td>Absorpcia krvi, sterilné krytie</td></tr>
+          <tr><td>🩺 Elastická bandáž (8 cm)</td><td>Vyvrtnutia, pevný obväz</td><td>Kompresné ošetrenie, dlahovanie</td></tr>
+          <tr><td>✂️ Nožnice s tupým hrotom</td><td>Strihanie obväzov, oblečenia</td><td>Nenahraditeľné pri ošetrení</td></tr>
+          <tr><td>🩻 Trojrohá šatka (2 ks)</td><td>Závesy, dlahy, obväzy</td><td>Multifunkčná — improvizovaný závesník</td></tr>
+          <tr><td>🧤 Latexové rukavice (4 páry)</td><td>Ochrana pri ošetrení</td><td>Bariéra pred infekciou (HIV, hepatitída)</td></tr>
+          <tr><td>💊 Ibuprofén / Paracetamol</td><td>Bolesť, horúčka</td><td>Tlmí bolesť, znižuje zápal</td></tr>
+          <tr><td>🧴 Dezinfekcia (Betadine / Octenisept)</td><td>Čistenie rán</td><td>Zabraňuje infekcii</td></tr>
+          <tr><td>🪡 Pinzeta</td><td>Triesky, kliešte</td><td>Presné vyberanie cudzích telies</td></tr>
+          <tr><td>🌡️ Teplomer</td><td>Meranie teploty</td><td>Rozoznanie hypotermie/horúčky</td></tr>
+          <tr><td>🪢 Turniket / hemostatický obväz</td><td>Silné krvácanie končatín</td><td>Záchrana života pri masívnom krvácaní</td></tr>
+          <tr><td>🏥 Záchranná fólia (space blanket)</td><td>Zahrievanie, signalizácia</td><td>Prevencia hypotermie</td></tr>
+          <tr><td>🔦 Mini-baterka</td><td>Osvetlenie, signalizácia</td><td>Základná orientácia v tme</td></tr>
+          <tr><td>💉 Antihistaminikum (Zyrtec)</td><td>Alergická reakcia</td><td>Tlmí reakciu na hmyz, rastliny</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box do">
+        <div class="ib-icon">✅</div>
+        <div class="ib-body">
+          <div class="ib-title">Tip: individuálna lekárnička</div>
+          Každý člen skupiny by mal mať <strong>aspoň základnú osobnú lekárničku</strong> (náplasťe, dezinfekcia, rukavice). Hlavná skupinová lekárnička nesmie byť jediným zdrojom pomôcok — pri rozdelení skupiny to môže byť fatálne.
+        </div>
+      </div>
+
+      <div class="info-box dont">
+        <div class="ib-icon">🚫</div>
+        <div class="ib-body">
+          <div class="ib-title">NEROBTE toto</div>
+          <ul style="padding-left:16px">
+            <li>Nenoste lekárničku na dne batohu — musí byť rýchlo dostupná.</li>
+            <li>Nekontrolujte dátumy spotreby len pred veľkým výletom — robte to každých 6 mesiacov.</li>
+            <li>Nenechajte deti nosiť lieky bez dohľadu — uložte ich do podpísaného vrecúška.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KAPITOLA 2 ══════════════════════════════ -->
+  <div id="zranenia" class="section-wrap">
+    <div class="sec-banner red"><span class="ico">🩸</span> Kapitola 2 — Zranenia a rezné rany</div>
+    <div class="content red-border">
+      <p>Rezné rany, odreniny a bodné zranenia sú najčastejšie úrazy v prírode. Správne a rýchle ošetrenie zabraňuje infekcii a nadmernému krvácaniu.</p>
+
+      <h2 class="red">Postup ošetrenia reznej rany — krok za krokom</h2>
+      <ol class="steps red">
+        <li><strong>Oblečte si rukavice</strong> — vždy, bez výnimky. Chránia vás aj zraneného.</li>
+        <li><strong>Zastavte krvácanie</strong> — priložte sterilnú gázu alebo čistý materiál a stlačte ranu. Tlak udržiavajte minimálne 5–10 minút bez prerušovania.</li>
+        <li><strong>Vyčistite ranu</strong> — oplaknite pitnou vodou (ideálne 0,9% fyziologickým roztokom) minimálne 60 sekúnd. Odstráňte viditeľné nečistoty — ale nie hĺbkovo.</li>
+        <li><strong>Dezinfikujte</strong> — aplikujte dezinfekciu (Betadine, Octenisept) okolo rany. Pozor: niektoré dezinfekcie (čistý jód, peroxid) môžu poškodiť tkanivo — konzultujte s lekárnikom.</li>
+        <li><strong>Pokryte ranu</strong> — sterilnou náplasťou alebo gázou. Ranu nezatvárajte tesne, ak je znečistená — nechajte ju "dýchať".</li>
+        <li><strong>Sledujte príznaky infekcie</strong> — začervenanie, opuch, teplo, hnis. Pri ich výskyte vyhľadajte lekára.</li>
+      </ol>
+
+      <h2 class="red">Silné krvácanie — zásady</h2>
+      <div class="info-box dont">
+        <div class="ib-icon">🚫</div>
+        <div class="ib-body">
+          <div class="ib-title">NEodstraňujte predmet z bodnej rany</div>
+          Ak je v rane zapichnutý predmet (nôž, vetvička), <strong>nevyberajte ho</strong> — môže zastavovať krvácanie. Obložte ho gázami a fixujte.
+        </div>
+      </div>
+
+      <div class="info-box do">
+        <div class="ib-icon">✅</div>
+        <div class="ib-body">
+          <div class="ib-title">Turniket — kedy a ako</div>
+          Pri masívnom krvácaní z končatiny, ktoré nejde zastaviť priamym tlakom: <strong>priložte turniket 5–7 cm nad ranu</strong>, utiahnite až do zastavenia krvácania, zapíšte čas priloženia. Turniket sa smie nechať max. 2 hodiny.
+        </div>
+      </div>
+
+      <h2 class="red">Typy rán a špecifické ošetrenie</h2>
+      <table class="dtable red">
+        <thead>
+          <tr><th>Typ rany</th><th>Charakteristika</th><th>Postup</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Odrenina</td><td>Povrchové poranenie kože, krvácanie z kapilár</td><td>Oplach, dezinfekcia, krytie</td></tr>
+          <tr><td>Rezná rana</td><td>Ostrý okraj, môže byť hlboká</td><td>Tlak, oplach, krytie; hlboká rana → lekár</td></tr>
+          <tr><td>Trhavá rana</td><td>Nepravidelné okraje, väčší rozsah</td><td>Tlak, sterilné krytie, urgentne lekár</td></tr>
+          <tr><td>Bodná rana</td><td>Malý otvor, môže byť hlboká</td><td>Nevyberať predmet, krytie, lekár</td></tr>
+          <tr><td>Pľuzgier</td><td>Tekutinová bublina pod kožou (od trenia)</td><td>Nerozbíjať, kryt špeciálnou náplasťou</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ KAPITOLA 3 ══════════════════════════════ -->
+  <div id="zlomeniny" class="section-wrap">
+    <div class="sec-banner yellow"><span class="ico">🦴</span> Kapitola 3 — Zlomeniny a vykĺbenia v prírode</div>
+    <div class="content yellow-border">
+      <p>Pád na skalnatom teréne alebo šmyknutie na mokrej ceste môže spôsobiť zlomeninu alebo vykĺbenie. V prírode bez röntgenu môže byť ťažké rozlíšiť tieto dva stavy — preto platí jedno pravidlo: <strong>ak si nie ste istí, imobilizujte a transportujte</strong>.</p>
+
+      <div class="info-box warn">
+        <div class="ib-icon">⚠️</div>
+        <div class="ib-body">
+          <div class="ib-title">Znaky možnej zlomeniny</div>
+          Silná bolesť pri tlaku alebo pohybe, opuch, modrina, deformácia (neprirodzenú poloha), nemožnosť zaťaženia, prasknúci zvuk v momente úrazu.
+        </div>
+      </div>
+
+      <h2 class="brown">Imobilizácia — krok za krokom</h2>
+      <ol class="steps brown">
+        <li><strong>Nezakresľujte poškodenú časť tela do "správnej polohy"</strong> — imobilizujte v polohe, v akej ste ju našli.</li>
+        <li><strong>Zaistite kĺby nad a pod zlomeninou</strong> — dlaha musí fixovať aspoň dva kĺby.</li>
+        <li><strong>Improvizujte dlahy</strong> — rovné vetvy, palice, turistické palice, karimatka zvinutá do trubice, roll mat.</li>
+        <li><strong>Podložte dlahy</strong> — oblečením, ponožkami, rukavicami pre pohodlie a cirkuláciu.</li>
+        <li><strong>Fixujte obväzmi, trojrohou šatkou alebo stuhami</strong> — nie tesne! Priebežne kontrolujte, či sú prsty teplé a citlivé (cirkulácia krvi).</li>
+        <li><strong>Pri vykĺbení ramenného kĺbu</strong> — použite trojrohú šatku ako záves, <strong>nevracajte kĺb násilím</strong>.</li>
+        <li><strong>Privolajte pomoc</strong> — väčšina zlomenín v horskom teréne vyžaduje evakuáciu HZS.</li>
+      </ol>
+
+      <div class="info-box dont">
+        <div class="ib-icon">🚫</div>
+        <div class="ib-body">
+          <div class="ib-title">NIKDY pri zlomenine</div>
+          <ul style="padding-left:16px">
+            <li>Nenavracajte vykĺbený kĺb alebo zlomenú kosť násilne — riskujete poškodenie ciev a nervov.</li>
+            <li>Nepodávajte jedlo ani piť, ak existuje podozrenie na operáciu (brušné zranenia).</li>
+            <li>Neprestávajte sledovať príznaky šoku: bledá, studená, mokrá pokožka, zmätenosť, rýchly slabý pulz.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="brown">Šok — rozpoznanie a prvá pomoc</h2>
+      <p>Šok je život ohrozujúci stav nedostatočného prekrvenia orgánov. Pri zlomeninách hrozí hypovolemický šok z vnútorného krvácania.</p>
+      <ul class="cklist">
+        <li>Uložte zraneného na chrbát, nohy mierne zdvihnite (ak nie je zranenie chrbtice alebo brucha)</li>
+        <li>Udržujte telesné teplo — záchranná fólia, bunda, deka</li>
+        <li>Hovorte pokojne a upokojujte zraneného</li>
+        <li>Neustále kontrolujte dýchanie a pulz</li>
+        <li>Neodchádzajte od zraneného — zostante pri ňom až do príchodu pomoci</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ KAPITOLA 4 ══════════════════════════════ -->
+  <div id="nebezpecia" class="section-wrap">
+    <div class="sec-banner red"><span class="ico">⚠️</span> Kapitola 4 — Nebezpečenstvá prírody</div>
+    <div class="content red-border">
+      <p>Slovenská príroda je krásna, ale skrýva konkrétne riziká. Vedieť ich rozoznať a správne zareagovať môže zachrániť život.</p>
+
+      <div class="danger-grid">
+        <!-- Kliešť -->
+        <div class="danger-card tick">
+          <div class="dc-head">🦟 Kliešť</div>
+          <div class="dc-body">
+            <strong>Príznaky boreliózy (do 30 dní):</strong>
+            Červený prstenec okolo miesta uhryznutia (erythema migrans), únava, bolesť kĺbov.
+            <br><br><strong>Postup:</strong><br>
+            1. Odstrante kliešťa kliešťovkou alebo pinzetou — chyťte čo najbližšie k pokožke.<br>
+            2. Otáčajte pomaly, nevytrhávajte.<br>
+            3. Dezinfikujte miesto.<br>
+            4. Zapíšte dátum uhryznutia.<br>
+            5. Sledujte príznaky 30 dní — pri prstenci ihneď lekár.
+          </div>
+        </div>
+        <!-- Osa / včela -->
+        <div class="danger-card wasp">
+          <div class="dc-head">🐝 Osa / Včela</div>
+          <div class="dc-body">
+            <strong>Anafylaxia (závažná alergia):</strong>
+            Opuch hrdla, ťažké dýchanie, pokles tlaku, strata vedomia — do 30 minút.
+            <br><br><strong>Postup:</strong><br>
+            1. Pri normálnej reakcii: vybraté žihadlo plastovou kartou (nie prstami), chlad, antihistaminikum.<br>
+            2. Pri anafylaxii: EpiPen (adrenalín) ihneď, volajte 112, poloha polosediaca.
+          </div>
+        </div>
+        <!-- Zmija -->
+        <div class="danger-card snake">
+          <div class="dc-head">🐍 Zmija obyčajná</div>
+          <div class="dc-body">
+            <strong>Príznaky uhryznutia:</strong>
+            Dve bodky (uhryznutie), bolesť, opuch, nevoľnosť, závraty, mdloby.
+            <br><br><strong>Postup:</strong><br>
+            1. Upokojtie zraneného — pohyb urýchľuje vstrebávanie jedu.<br>
+            2. Imobilizujte pokusané miesto nižšie ako srdce.<br>
+            3. Odstráňte prstene, hodinky (opuch).<br>
+            4. Volajte 112 — antivírus je v nemocnici.<br>
+            5. <strong>NEVYSÁVAJTE jed, nerežte ranu, neprikladajte turniket.</strong>
+          </div>
+        </div>
+        <!-- Medveď -->
+        <div class="danger-card bear">
+          <div class="dc-head">🐻 Medveď hnedý</div>
+          <div class="dc-body">
+            <strong>Predchádzanie:</strong>
+            Robte hluk, nekrmte, nikdy medzi medveďom a mláďatami.
+            <br><br><strong>Stretnutie:</strong><br>
+            1. Nekričte, nepobežte — hovorte pokojne, pomaly ustupujte.<br>
+            2. Ak zaútočí: ľahnite si na brucho, zakryte hlavu, predstierajte mŕtveho.<br>
+            3. Po útoku: ošetrite rany, okamžite vyhľadajte nemocnicu (infekcia).
+          </div>
+        </div>
+        <!-- Hypotermia -->
+        <div class="danger-card cold">
+          <div class="dc-head">🥶 Hypotermia</div>
+          <div class="dc-body">
+            <strong>Príznaky:</strong>
+            Triaška, zmätenosť, ospalosť, bledá pokožka, spomalený pulz — pri teplote tela pod 35°C.
+            <br><br><strong>Postup:</strong><br>
+            1. Presuňte do sucha a tepla — nie k ohňu priamo.<br>
+            2. Zvlečte mokré oblečenie, oblečte suché vrstvy.<br>
+            3. Záchranná fólia, teplé (nie horúce) nápoje ak je pri vedomí.<br>
+            4. Volajte 112 — ťažká hypotermia je smrteľná.
+          </div>
+        </div>
+        <!-- Tepelný úder -->
+        <div class="danger-card heat">
+          <div class="dc-head">🌡️ Tepelný úder</div>
+          <div class="dc-body">
+            <strong>Príznaky:</strong>
+            Horúca suchá koža, teplota nad 40°C, zmätenosť, bez potenia, sčervenanie.
+            <br><br><strong>Postup:</strong><br>
+            1. Presuňte do tieňa/chladu ihneď.<br>
+            2. Ochlaďujte telo — vlhké uteráky na krk, podpazušie, slabiny.<br>
+            3. Podávajte studené nápoje ak je pri vedomí (malé dúšky).<br>
+            4. Volajte 112 — tepelný úder môže spôsobiť poškodenie mozgu.
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box info">
+        <div class="ib-icon">ℹ️</div>
+        <div class="ib-body">
+          <div class="ib-title">Tiesňové linky — uložte si ich do telefónu</div>
+          <strong>HZS (Horská záchranná služba): 18 300</strong> — platí iba v SR<br>
+          <strong>Záchranná služba: 155</strong><br>
+          <strong>Jednotné európske číslo tiesňového volania: 112</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KAPITOLA 5 ══════════════════════════════ -->
+  <div id="nudzove" class="section-wrap">
+    <div class="sec-banner green"><span class="ico">🧭</span> Kapitola 5 — Núdzové situácie</div>
+    <div class="content">
+      <p>Stratenie, vybitý telefón, náhla búrka — situácie, ktoré si mnohí turisti nevedia predstaviť, kým sa v nich ocitnú. Pokojná hlava a základné vedomosti sú v týchto momentoch tou najdôležitejšou výbavou.</p>
+
+      <h2>Ak sa stratíte v lese alebo v horách</h2>
+      <ol class="steps">
+        <li><strong>STOP — zastavte sa</strong> — Sit, Think, Observe, Plan. Nesmiete panikáriť a utekať ďalej do neznáma.</li>
+        <li><strong>Zostante na mieste</strong> — záchranári hľadajú podľa vašej poslednej známej polohy. Blúdenie situáciu zhoršuje.</li>
+        <li><strong>Dajte vedieť</strong> — zavolajte 18 300 alebo 112. Aj slabý signál môže stačiť na privolanie pomoci.</li>
+        <li><strong>Signalizujte</strong> — záchranná fólia odráža svetlo viditeľné z vrtuľníka, píšťalka počuť na 1 km, dym ohňa (vlhké listie) je viditeľný.</li>
+        <li><strong>Vyhľadajte úkryt</strong> — pri nástupe tmy alebo zlého počasia. Vetrolam z vetiev, plachta, jaskyňa — čokoľvek, čo zadrží teplo.</li>
+      </ol>
+
+      <h2>SOS signály</h2>
+      <table class="dtable">
+        <thead><tr><th>Metóda</th><th>Signál</th><th>Poznámka</th></tr></thead>
+        <tbody>
+          <tr><td>Píšťalka / hlas</td><td>3 × krátky + 3 × dlhý + 3 × krátky (SOS)</td><td>Opakujte každé 3 minúty</td></tr>
+          <tr><td>Záchranná fólia</td><td>Miešajte na slnku — blikanie</td><td>Viditeľné z vrtuľníka km ďaleko</td></tr>
+          <tr><td>Oheň / dym</td><td>3 ohne v trojuholníku (1 km od seba)</td><td>Medzinárodný núdzový signál</td></tr>
+          <tr><td>Znaky v teréne</td><td>SOS z kameňov/vetiev — min. 3 m veľké</td><td>Viditeľné zo vzduchu</td></tr>
+          <tr><td>Svetlomet / baterka</td><td>3 × bliknutie, pauza, opakovanie</td><td>Efektívne v noci</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Orientácia bez telefónu</h2>
+      <ul class="cklist">
+        <li>Slnko vychádza na východe, zapadá na západe — poludňajší tieň ukazuje na sever (v SR)</li>
+        <li>Severná strana stromov — machom pokrytá strana (indikátor, nie exaktný kompas)</li>
+        <li>Toky vody vedú do údolí a k ľuďom — sledujte potok smerom dole</li>
+        <li>Telefón v leteckom režime šetrí batériu — GPS funguje aj bez signálu (offline mapy)</li>
+        <li>Hviezda Polárka (Ursa Minor) — sever; hľadajte Veľkú medvedicu a predĺžte jej "zadnú stenu"</li>
+      </ul>
+
+      <div class="info-box do">
+        <div class="ib-icon">✅</div>
+        <div class="ib-body">
+          <div class="ib-title">Povedzte niekomu, kam idete</div>
+          Vždy zanechajte informáciu o plánovanej trase, predpokladanom čase návratu a kontakte, koho majú volať, ak sa nevrátite včas. Aplikácia <strong>Záchranár (HZS)</strong> umožňuje zdieľať trasu v reálnom čase.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KAPITOLA 6 ══════════════════════════════ -->
+  <div id="kpr" class="section-wrap">
+    <div class="sec-banner red"><span class="ico">❤️</span> Kapitola 6 — Resuscitácia a bezvedomie</div>
+    <div class="content red-border">
+      <p>Zástava srdca v prírode — bez okamžitej KPR (kardiopulmonálnej resuscitácie) klesajú šance na prežitie každú minútou o 10%. Vaše ruky môžu byť rozdielom medzi životom a smrťou.</p>
+
+      <div class="info-box warn">
+        <div class="ib-icon">⚠️</div>
+        <div class="ib-body">
+          <div class="ib-title">Pred začatím KPR — overte</div>
+          1. Je miesto bezpečné (kameň, prúd, lavína)? &nbsp; 2. Reaguje postihnutý na oslovenie a potľapkanie po pleci? &nbsp; 3. Dýcha normálne (10 sekúnd kontrola)?<br>
+          Ak <strong>nereaguje a nedýcha normálne → začnite KPR a volajte 112</strong>.
+        </div>
+      </div>
+
+      <h2 class="red">KPR — krok za krokom (dospelý)</h2>
+      <div class="cpr-steps">
+        <div class="cpr-step">
+          <span class="cs-ico">📞</span>
+          <span class="cs-num">1.</span>
+          <span class="cs-label">VOLAJTE 112</span>
+          <p>Pošlite niekoho volať. Sami nezastavujte KPR. Dispečer vás bude navigovať.</p>
+        </div>
+        <div class="cpr-step">
+          <span class="cs-ico">✋</span>
+          <span class="cs-num">2.</span>
+          <span class="cs-label">POLOHA</span>
+          <p>Postihnutý na chrbte, na tvrdom povrchu. Kľaknite si zboku na úroveň hrudníka.</p>
+        </div>
+        <div class="cpr-step">
+          <span class="cs-ico">💪</span>
+          <span class="cs-num">3.</span>
+          <span class="cs-label">30 STLAČENÍ</span>
+          <p>Základňa dlane na stred hrudnej kosti. Stláčajte do hĺbky 5–6 cm, rytmus 100–120/min (pieseň „Stayin' Alive").</p>
+        </div>
+        <div class="cpr-step">
+          <span class="cs-ico">💨</span>
+          <span class="cs-num">4.</span>
+          <span class="cs-label">2 VDYCHY</span>
+          <p>Záklon hlavy, zdvihnutie brady. Zakryte ústa a vdyknite 1 sekund, sledujte zdvihnutie hrudníka. Opakujte 2×.</p>
+        </div>
+        <div class="cpr-step">
+          <span class="cs-ico">🔁</span>
+          <span class="cs-num">5.</span>
+          <span class="cs-label">30:2 OPAKOVANIE</span>
+          <p>Pokračujte v cykle 30 stlačení : 2 vdychy bez prerušenia až do príchodu pomoci.</p>
+        </div>
+      </div>
+
+      <div class="info-box do">
+        <div class="ib-icon">✅</div>
+        <div class="ib-body">
+          <div class="ib-title">Len stlačenia — tiež zachráni</div>
+          Ak sa nechcete alebo nemôžete vykonávať umelé dýchanie, <strong>pokračujte len v nepretržitých stlačeniach hrudníka</strong> (100–120/min). Je to lepšie ako nič. Odporúčajú to aj európske guidelines ERC 2021.
+        </div>
+      </div>
+
+      <h2 class="red">KPR u detí (1–8 rokov)</h2>
+      <ul class="cklist red">
+        <li>Stláčajte jednou rukou alebo dvoma prstami (novorodenec) — do hĺbky 1/3 hrudníka</li>
+        <li>Cyklus 30 stlačení : 2 vdychy (rovnako ako dospelý)</li>
+        <li>Vdych len toľko, aby sa zdvihol hrudník — nie silový nádych</li>
+        <li>Vždy volajte 112 — deti reagujú lepšie na včasnú KPR</li>
+      </ul>
+
+      <h2 class="red">Stabilizovaná (zotavovacia) poloha</h2>
+      <div class="recovery-box">
+        <div class="rb-icon">🛡️</div>
+        <div>
+          <strong style="color:#bf360c">Kedy použiť:</strong> Postihnutý je pri vedomí, ale v bezvedomí dýcha normálne — nie je nutná KPR.<br><br>
+          <strong style="color:#bf360c">Postup:</strong><br>
+          1. Kľaknite zboku. Bližšiu ruku dajte do pravého uhla, dlaňou hore.<br>
+          2. Vzdialenú ruku preložte cez hrudník, chrbát ruky priložte k lícu.<br>
+          3. Vzdialenú nohu ohnite v kolene, ťahnite za ňu — postihnutý sa otočí na bok.<br>
+          4. Zakloňte hlavu miernym záklonm — uvoľní dýchacie cesty.<br>
+          5. <strong>Sledujte dýchanie každú minútu</strong> do príchodu záchranky.
+        </div>
+      </div>
+
+      <div class="info-box dont">
+        <div class="ib-icon">🚫</div>
+        <div class="ib-body">
+          <div class="ib-title">KEDY NEPOHYBOVAŤ postihnutým</div>
+          Ak máte podozrenie na <strong>poranenie chrbtice</strong> (pád z výšky, náraz hlavy, nehoda) — <strong>nepohybujte postihnutým</strong>, kým nepríde záchranná služba. Výnimka: priame nebezpečie ohrozenia života (oheň, topenie).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ZÁVER ══════════════════════════════════ -->
+  <div id="zaver" class="conclusion">
+    <h2>🌿 Záver — Byť pripravený zachraňuje životy</h2>
+    <p>Prvá pomoc v prírode nie je doménou len záchranárov a lekárov. Je to súbor vedomostí a zručností, ktoré môže ovládať každý — a ktoré môžu v kritickej chvíli rozhodnúť o živote.</p>
+    <p>Každý kilometer naviac v horách, každý piknik pri rieke, každý nočný tábor — tieto zážitky sú o to krajšie, keď viete, že ste na ne pripravení. Lekárnička v batohu, naučené kroky KPR, uložené číslo HZS v telefóne.</p>
+    <p><strong>Investujte do kurzu prvej pomoci.</strong> Slovenský Červený kríž (cervenykriz.sk) a Horská záchranná služba (hzs.sk) pravidelne organizujú praktické kurzy pre verejnosť.</p>
+    <p style="margin-top:24px; font-size:.9rem; opacity:.7">Táto príručka vychádza zo štandardov Slovenského Červeného kríža a Európskej resuscitačnej rady (ERC Guidelines 2021). Pre aktuálne a autoritatívne informácie navštívte <strong>cervenykriz.sk</strong> a <strong>erc.edu</strong>.</p>
+    <div style="margin-top:28px">
+      <a class="pdf-btn" href="https://github.com/mariyasofystaykova-lab/tipy-prva-pomoc-v-prirode/raw/main/Tipy_Prva_Pomoc_v_Prirode.pdf">
+        ⬇ Stiahnuť celú knihu ako PDF
+      </a>
+    </div>
+  </div>
+
+</div><!-- /book -->
+
+<div class="footer">
+  <strong>Tipy pre Prvú Pomoc v Prírode</strong> — Bonus 3 PDF<br>
+  Tiesňové linky: <strong>HZS 18 300 &nbsp;|&nbsp; Záchranná 155 &nbsp;|&nbsp; Európska 112</strong><br>
+  <span style="font-size:.8rem; opacity:.6">Informácie sú informatívneho charakteru. Navštívte cervenykriz.sk pre certifikované kurzy prvej pomoci.</span>
+</div>
+
+</body>
+</html>
