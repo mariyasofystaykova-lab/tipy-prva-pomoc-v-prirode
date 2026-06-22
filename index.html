@@ -44,8 +44,10 @@
   .cover::before {
     content: '';
     position: absolute; inset: 0;
+    pointer-events: none;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Ccircle cx='200' cy='200' r='180' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='40'/%3E%3C/svg%3E") center/cover;
   }
+  .cover > * { position: relative; z-index: 1; }
   .bonus-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: var(--yellow-mid); color: #000;
